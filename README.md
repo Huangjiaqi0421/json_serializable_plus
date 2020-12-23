@@ -3,7 +3,7 @@
 支持List解析。
 
 ## Getting Started
----
+
 在已经添加json_serializable 的基础上，只需要在`dev_dependencies`中添加`json_serializable_plus:^x.x.x` 。
 最终的`pubspec.yaml` 文件类似下面这样:
 ```
@@ -25,7 +25,7 @@ dev_dependencies:
 
 ```
 ## Use
----
+
 运行`flutter pub run build_runner build`
 在根目录会生成一个json_serializable.dart 文件，具体使用方法请查看 test_main.dart
 
@@ -33,7 +33,7 @@ dev_dependencies:
 * 增加对json_annotation 字段的解析
 
 ## QA
----
+
 ### 运行`flutter pub run build_runner build`时出现
 
 ```
