@@ -1,0 +1,25 @@
+# Read about `build.yaml` at https://pub.dev/packages/build_config
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          create_factory: true
+      json_serializable_plus:
+        options:
+          #todo 这个在前面的时候 不知道为啥，添加了json_serializable 会和这个设置有冲突，json_serializable会读取到这个设置
+          special_synthetic_assets: test    # lib 、  、 test    package(todo)
+
+
+
+builders:
+
+  json_serializable_plus:
+    import: "package:json_serializable_plus/builder.dart"
+    builder_factories: ["jsonSerializablePlus"]
+    build_extensions: {"/$lib/$": ['']}
+    auto_apply: root_package
+    build_to: source
+    applies_builders: ["source_gen|combining_builder"]
+
+
