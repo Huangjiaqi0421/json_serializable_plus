@@ -1,7 +1,7 @@
 name: json_serializable_plus
 description: Unified json parsing
 version: 0.0.1
-homepage:
+homepage: https://github.com/Huangjiaqi0421/json_serializable_plus
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
