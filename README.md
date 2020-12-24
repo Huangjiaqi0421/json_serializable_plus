@@ -9,6 +9,8 @@
 
 ## Getting Started
 
+* 当前最新版本 json_serializable_plus: ^0.0.3
+
 在已经添加json_serializable 的基础上，只需要在`dev_dependencies`中添加`json_serializable_plus:^x.x.x` 。
 最终的`pubspec.yaml` 文件类似下面这样:
 ```
@@ -25,7 +27,7 @@ dev_dependencies:
 
   build_runner: ^1.0.0
   json_serializable: ^3.5.1
-  json_serializable_plus: ^0.0.2
+  json_serializable_plus: ^0.0.3
 
 
 ```
