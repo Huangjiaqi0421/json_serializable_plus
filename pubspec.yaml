@@ -1,6 +1,6 @@
 name: json_serializable_plus
 description: Automatically generate code for converting json Unified，dependencies json_serializable .Look like Gson
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/Huangjiaqi0421/json_serializable_plus
 
 environment:
