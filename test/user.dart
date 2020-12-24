@@ -10,6 +10,7 @@ class Teacher {
   List<Student> students;
   Teacher(this.teacherName,this.id,this.students);
   factory Teacher.fromJson(Map<String,dynamic> json)=>_$TeacherFromJson(json);
+  Map<String,dynamic> toJson() =>_$TeacherToJson(this);
 }
 
 
@@ -19,6 +20,8 @@ class Student {
   int id;
   Student(this.studentName,this.id);
   factory Student.fromJson(Map<String,dynamic> json)=>_$StudentFromJson(json);
+  Map<String,dynamic> toJson() =>_$StudentToJson(this);
+
 }
 
 

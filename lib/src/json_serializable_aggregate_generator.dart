@@ -40,7 +40,9 @@ class JsonSerializableAggregateGenerator
           }
           String typeParameters = type.substring(5, type.lastIndexOf(">"));
           List typeList = _createTypeList(typeParameters);
-          
+          if (typeList == null) {
+            return null;
+          }
           json.forEach((item) {
             typeList.add(_fromJsonMap(item, typeParameters));
           });
@@ -52,9 +54,9 @@ class JsonSerializableAggregateGenerator
       
     ''');
 
-    contentBuffer.write(generateCreateTypeListFunction());
+    contentBuffer.write(_generateCreateTypeListFunction());
 
-    contentBuffer.write(generateFromJsonMapFunction());
+    contentBuffer.write(_generateFromJsonMapFunction());
 
     contentBuffer.write('}');
     return contentBuffer.toString();
@@ -90,20 +92,21 @@ class JsonSerializableAggregateGenerator
         "import '${path.replaceFirst('$specialSyntheticAssets/', '')}';\n");/// example:  path 'lib/entity' =>'entity'
   }
 
-  String generateCreateTypeListFunction() {
+  String _generateCreateTypeListFunction() {
 
     return '''
         static List _createTypeList(String typeParameters){
           switch(typeParameters){
             ${_classNames.map((name) => "case '${name}':return List<${name}>();").join()}
     }
+    return null;
   }
     ''';
 
 
   }
 
-  String generateFromJsonMapFunction() {
+  String _generateFromJsonMapFunction() {
 
     return '''
           static dynamic _fromJsonMap<T>(json, String type) {

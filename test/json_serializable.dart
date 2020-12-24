@@ -11,7 +11,9 @@ class JsonSerializablePlus {
       }
       String typeParameters = type.substring(5, type.lastIndexOf(">"));
       List typeList = _createTypeList(typeParameters);
-
+      if (typeList == null) {
+        return null;
+      }
       json.forEach((item) {
         typeList.add(_fromJsonMap(item, typeParameters));
       });
@@ -28,6 +30,7 @@ class JsonSerializablePlus {
       case 'Student':
         return List<Student>();
     }
+    return null;
   }
 
   static dynamic _fromJsonMap<T>(json, String type) {

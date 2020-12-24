@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:build/build.dart';
 import 'package:glob/glob.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:json_serializable_plus/src/aggregate/build_config.dart';
-import 'package:source_gen/source_gen.dart';
 import 'package:dart_style/dart_style.dart';
 
 import 'aggregate_generator.dart';
