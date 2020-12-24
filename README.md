@@ -79,11 +79,11 @@ Teacher teacher = JsonSerializablePlus.fromJson(
 
 ```
 Failed to precompile build_runner:build_runner:
-../../../../../.pub-cache/hosted/pub.flutter-io.cn/build_resolvers-1.3.7/lib/src/resolver.dart:343:10: Error: Method not found: 'SummaryBuilder'.
+../../../../../.pub-cache/hosted/pub.flutter-io.cn/build_resolvers-x.x.x/lib/src/resolver.dart:343:10: Error: Method not found: 'SummaryBuilder'.
 return SummaryBuilder(sdkSources, sdk.context)
  ```
 
-`dev_dependencies`指定`build_resolvers`版本 >= `^1.3.11`
+`dev_dependencies`指定`build_resolvers`版本 >= `^1.5.1`
 
 
 * 运行`flutter pub run build_runner build`时出现`[SEVERE] Conflicting outputs were detected and the build is unable to prompt for permission to remove them.`
