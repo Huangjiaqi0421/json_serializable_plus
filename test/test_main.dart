@@ -7,20 +7,20 @@ import 'user.dart';
 
 void main() {
   test(" serialize json to object", () {
-    User user = JsonSerializablePlus.fromJson(
-        json.decode("{\"name\":\"hjq\",\"id\":12}"));
+    Teacher teacher = JsonSerializablePlus.fromJson(
+        json.decode("{\"teacherName\":\"hjq\",\"id\":32,\"students\":[{\"studentName\":\"s1\",\"id\":12},{\"studentName\":\"s2\",\"id\":12}]}"));
     expect(
-        user,
-        predicate<User>(
-            (user) => user.name == 'hjq' && user.id == 12, "serialize failed"));
+        teacher,
+        predicate<Teacher>(
+            (teacher) => teacher.teacherName == 'hjq' && teacher.id == 32 && teacher.students.length==2, "serialize failed"));
   });
 
   test("serialize json to list", () {
-    List<User> users = JsonSerializablePlus.fromJson(json.decode(
-        "[{\"name\":\"hjq\",\"id\":12},{\"name\":\"hjq\",\"id\":12},{\"name\":\"hjq\",\"id\":12},{\"name\":\"hjq\",\"id\":12}]"));
+    List<Student> student = JsonSerializablePlus.fromJson(json.decode(
+        "[{\"studentName\":\"s1\",\"id\":12},{\"studentName\":\"s2\",\"id\":12}]"));
     expect(
-        users,
-        predicate<List<User>>(
-            ((users) => users.length > 0), "serialize json to list failed"));
+        student,
+        predicate<List<Student>>(
+            ((students) => students.length > 0), "serialize json to list failed"));
   });
 }

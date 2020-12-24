@@ -6,9 +6,9 @@ part of 'user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-User _$UserFromJson(Map<String, dynamic> json) {
-  return User(
-    json['name'] as String,
+Teacher _$TeacherFromJson(Map<String, dynamic> json) {
+  return Teacher(
+    json['teacherName'] as String,
     json['id'] as int,
     (json['students'] as List)
         ?.map((e) =>
@@ -17,20 +17,20 @@ User _$UserFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
-      'name': instance.name,
+Map<String, dynamic> _$TeacherToJson(Teacher instance) => <String, dynamic>{
+      'teacherName': instance.teacherName,
       'id': instance.id,
       'students': instance.students,
     };
 
 Student _$StudentFromJson(Map<String, dynamic> json) {
   return Student(
-    json['name'] as String,
+    json['studentName'] as String,
     json['id'] as int,
   );
 }
 
 Map<String, dynamic> _$StudentToJson(Student instance) => <String, dynamic>{
-      'name': instance.name,
+      'studentName': instance.studentName,
       'id': instance.id,
     };

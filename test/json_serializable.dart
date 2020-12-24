@@ -23,8 +23,8 @@ class JsonSerializablePlus {
 
   static List _createTypeList(String typeParameters) {
     switch (typeParameters) {
-      case 'User':
-        return List<User>();
+      case 'Teacher':
+        return List<Teacher>();
       case 'Student':
         return List<Student>();
     }
@@ -32,8 +32,8 @@ class JsonSerializablePlus {
 
   static dynamic _fromJsonMap<T>(json, String type) {
     switch (type) {
-      case 'User':
-        return User.fromJson(json);
+      case 'Teacher':
+        return Teacher.fromJson(json);
       case 'Student':
         return Student.fromJson(json);
     }

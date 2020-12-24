@@ -6,10 +6,7 @@ import 'src/aggregate/build_config.dart';
 import 'src/aggregate/aggregate_builder.dart';
 
 Builder jsonSerializablePlus(BuilderOptions options) {
-  try {
-    BuildConfig config = BuildConfig.fromJson(options.config);
-    return AggregateBuilder(JsonSerializableAggregateGenerator(),config,"json_serializable.dart");
-  } on CheckedFromJsonException catch (e) {
-
-  }
+  BuildConfig config = BuildConfig.fromJson(options.config);
+  return AggregateBuilder(
+      JsonSerializableAggregateGenerator(), config, "json_serializable.dart");
 }

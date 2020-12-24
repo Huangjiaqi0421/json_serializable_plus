@@ -4,20 +4,20 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'user.g.dart';
 @JsonSerializable()
-class User {
-  String name;
+class Teacher {
+  String teacherName;
   int id;
   List<Student> students;
-  User(this.name,this.id,this.students);
-  factory User.fromJson(Map<String,dynamic> json)=>_$UserFromJson(json);
+  Teacher(this.teacherName,this.id,this.students);
+  factory Teacher.fromJson(Map<String,dynamic> json)=>_$TeacherFromJson(json);
 }
 
 
 @JsonSerializable()
 class Student {
-  String name;
+  String studentName;
   int id;
-  Student(this.name,this.id);
+  Student(this.studentName,this.id);
   factory Student.fromJson(Map<String,dynamic> json)=>_$StudentFromJson(json);
 }
 

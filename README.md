@@ -1,6 +1,11 @@
 # json_serializable_plus
+
 使用build_runner，对官方json_serializable功能的增加，提供了统一的json解析方法。
 支持List解析。
+
+构建器会找到 [package：json_annotation](https://pub.dev/packages/json_annotation)注释的 类，生成统一的解析方法。
+
+查看[json_serializable](https://pub.dev/packages/json_serializable)的使用方法
 
 ## Getting Started
 
@@ -20,14 +25,50 @@ dev_dependencies:
 
   build_runner: ^1.0.0
   json_serializable: ^3.5.0
-  json_serializable_plus: ^0.1.1
+  json_serializable_plus: ^0.0.2
 
 
 ```
-## Use
+## Example
+1. 给`User` 和 `Student`设置 `@JsonSerializable()`注解
 
-运行`flutter pub run build_runner build`
-在根目录会生成一个json_serializable.dart 文件，具体使用方法请查看 test_main.dart
+```
+import 'package:json_annotation/json_annotation.dart';
+
+part 'user.g.dart';
+@JsonSerializable()
+class Teacher {
+  String teacherName;
+  int id;
+  List<Student> students;
+  Teacher(this.teacherName,this.id,this.students);
+  factory Teacher.fromJson(Map<String,dynamic> json)=>_$TeacherFromJson(json);
+}
+
+
+@JsonSerializable()
+class Student {
+  String studentName;
+  int id;
+  Student(this.studentName,this.id);
+  factory Student.fromJson(Map<String,dynamic> json)=>_$StudentFromJson(json);
+}
+
+
+```
+
+
+2. 运行`flutter pub run build_runner build`会在根目录会生成一个json_serializable.dart 文件
+
+3. 调用方法解析json
+
+```
+Teacher teacher = JsonSerializablePlus.fromJson(
+        json.decode("{\"teacherName\":\"hjq\",\"id\":32,\"students\":[{\"studentName\":\"s1\",\"id\":12},{\"studentName\":\"s2\",\"id\":12}]}"));
+
+ List<Student> student = JsonSerializablePlus.fromJson(json.decode(
+        "[{\"studentName\":\"s1\",\"id\":12},{\"studentName\":\"s2\",\"id\":12}]"));
+```
 
 ## TODO
 * 增加对json_annotation 字段的解析
