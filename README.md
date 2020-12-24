@@ -24,13 +24,13 @@ dev_dependencies:
     sdk: flutter
 
   build_runner: ^1.0.0
-  json_serializable: ^3.5.0
+  json_serializable: ^3.5.1
   json_serializable_plus: ^0.0.2
 
 
 ```
 ## Example
-1. 给`User` 和 `Student`设置 `@JsonSerializable()`注解
+1. 给`Teacher` 和 `Student`设置 `@JsonSerializable()`注解
 
 ```
 import 'package:json_annotation/json_annotation.dart';
