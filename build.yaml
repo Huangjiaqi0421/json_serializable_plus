@@ -7,7 +7,6 @@ targets:
           create_factory: true
       json_serializable_plus:
         options:
-          #todo 这个在前面的时候 不知道为啥，添加了json_serializable 会和这个设置有冲突，json_serializable会读取到这个设置
           special_synthetic_assets: test    # lib 、  、 test    package(todo)
 
 
